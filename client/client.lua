@@ -102,10 +102,7 @@ CreateThread(function()
                 end
             end
             if IsControlJustPressed(0, 191) then
-                local str =
-                    'CreateCamWithParams("DEFAULT_SCRIPTED_CAMERA",' .. camCoords.x .. ',' .. camCoords.y .. ',' ..
-                        camCoords.z .. ',' .. camRot.x .. ',' .. camRot.y .. ',' .. camRot.z .. ',' .. camFov ..
-                        ', true, 2)'
+                local str = ('CreateCamWithParams("DEFAULT_SCRIPTED_CAMERA", %.2f, %.2f, %.2f, %.2f, %.2f, %.2f, %.2f, true, 2)'):format(camCoords.x, camCoords.y, camCoords.z, camRot.x, camRot.y, camRot.z, camFov)
                 SendNUIMessage({
                     type = 'copy',
                     data = str
