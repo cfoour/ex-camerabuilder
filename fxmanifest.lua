@@ -1,17 +1,11 @@
-fx_version 'cerulean'
 
-game 'gta5'
+fx_version 'cerulean'
 author 'Tony'
 description 'Tony Camera Builder Devtools'
+game 'gta5'
 
-files{
-    'web/index.html'
-}
+shared_script '@ox_lib/init.lua'
 
-ui_page 'web/index.html'
-
-client_scripts {
-	'client/client.lua'
-}
+client_script 'client/*.lua'
 
 lua54 'yes'
