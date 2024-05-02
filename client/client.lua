@@ -102,11 +102,8 @@ CreateThread(function()
                 end
             end
             if IsControlJustPressed(0, 191) then
-                local str = ('CreateCamWithParams("DEFAULT_SCRIPTED_CAMERA", %.2f, %.2f, %.2f, %.2f, %.2f, %.2f, %.2f, true, 2)'):format(camCoords.x, camCoords.y, camCoords.z, camRot.x, camRot.y, camRot.z, camFov)
-                SendNUIMessage({
-                    type = 'copy',
-                    data = str
-                })
+                local str = ('pos = vector3(%.2f, %.2f, %.2f), \n rot = vector3(%.2f, %.2f, %.2f)'):format(camCoords.x, camCoords.y, camCoords.z, camRot.x, camRot.y, camRot.z)
+                lib.setClipboard(str)
             end
             if coords then
                 SetCamCoord(cam1, coords.xyz)
